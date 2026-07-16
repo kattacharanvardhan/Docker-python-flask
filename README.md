@@ -33,16 +33,22 @@ This project demonstrates how to deploy a Python Flask application using **Docke
 ## 🚀 Steps to Run the Project
 
 
-### Step 2: Build Docker Images and Start Containers
+### Step 1: Build Docker Images 
 
 ```bash
-docker compose up -d --build
+docker build -t python:v1 .
 ```
 
-### Step 3: Verify Running Containers
+### Step 2: Run Docker Compose 
 
 ```bash
-docker ps
+docker-compose up -d
+```
+
+### Step 2: Verify Running Containers
+
+```bash
+docker-compose ps -a
 ```
 
 ### Step 4: Open the Application
