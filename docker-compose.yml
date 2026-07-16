@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-lb
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - backend1
+      - backend2
+      - backend3
+
+  backend1:
+    image: python:v1
+    container_name: backend-1
+    expose:
+      - "5000"
+
+  backend2:
+    image: python:v1
+    container_name: backend-2
+    expose:
+      - "5000"
+
+  backend3:
+    image: python:v1
+    container_name: backend-3
+    expose:
+      - "5000"
